@@ -65,8 +65,8 @@ config :phoenix, :json_library, Jason
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
 
-config :test_repo, :ash_domains, [TestRepo.Support]
+config :test_repo, :ash_domains, [TestRepo.Domain]
 
 config :mime, :extensions, %{
-  "json" => "application/json"
+  "json" => "application/vnd.api+json"
 }

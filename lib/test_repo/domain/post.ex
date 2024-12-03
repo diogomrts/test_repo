@@ -1,15 +1,10 @@
-defmodule TestRepo.Support.Author do
+defmodule TestRepo.Domain.Post do
   use Ash.Resource,
-    domain: TestRepo.Support,
+    domain: TestRepo.Domain,
     extensions: [AshJsonApi.Resource]
 
   json_api do
-    type("author")
-
-    routes do
-      base "/authors"
-      index :read
-    end
+    type("post")
   end
 
   actions do
@@ -23,6 +18,7 @@ defmodule TestRepo.Support.Author do
   end
 
   relationships do
-    has_many(:posts, TestRepo.Support.Post, public?: true)
+    belongs_to :author, TestRepo.Domain.Author, public?: true
+    belongs_to :blog, TestRepo.Domain.Blog, public?: true
   end
 end

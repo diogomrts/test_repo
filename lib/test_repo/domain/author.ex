@@ -1,13 +1,13 @@
-defmodule TestRepo.Support.Blog do
+defmodule TestRepo.Domain.Author do
   use Ash.Resource,
-    domain: TestRepo.Support,
+    domain: TestRepo.Domain,
     extensions: [AshJsonApi.Resource]
 
   json_api do
-    type("blog")
+    type("author")
 
     routes do
-      base "/blogs"
+      base "/authors"
       index :read
     end
   end
@@ -23,6 +23,6 @@ defmodule TestRepo.Support.Blog do
   end
 
   relationships do
-    has_many :posts, TestRepo.Support.Post, public?: true
+    has_many(:posts, TestRepo.Domain.Post, public?: true)
   end
 end
