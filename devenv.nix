@@ -47,19 +47,11 @@
 
   services.postgres = {
     enable = true;
-    package = pkgs.postgresql_13;
+    package = pkgs.postgresql_16;
     listen_addresses = "127.0.0.1";
-  };
-
-  # https://devenv.sh/pre-commit-hooks/
-
-  # pre-commit.hooks.shellcheck.enable = true;
-  pre-commit.hooks = {
-    check-added-large-files.enable = true;
-    mixed-line-endings.enable = true;
-    mixed-line-endings.excludes = [ "priv/repo/structure/.*" ];
-    # nope, see https://github.com/calleebree/console/actions/runs/9600177857/job/26475733038
-    # mix-format.enable = true;
+    initialScript = ''
+      CREATE USER postgres WITH SUPERUSER PASSWORD 'password';
+    '';
   };
 
   cachix.enable = false;

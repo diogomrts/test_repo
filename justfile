@@ -29,13 +29,12 @@ test-wip:
 run-dev-db:
   @start-postgres
 
-# run phx server in dev mode in interactive elixir shell
 run-dev-server:
-  iex -S mix phx.server
+  iex -S mix
 
 # run interactive elixir shell
 run-dev-shell:
-  iex -S mix
+  cd helpdesk && iex -S mix
 
 # db should be stopped to run db-wipe
 db-wipe:
