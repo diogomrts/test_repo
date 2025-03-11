@@ -30,7 +30,8 @@ run-dev-db:
   @start-postgres
 
 run-dev-server:
-  iex -S mix
+  iex -S mix phx.server
+
 
 # run interactive elixir shell
 run-dev-shell:

@@ -1,6 +1,7 @@
 defmodule Helpdesk.Support do
   use Ash.Domain,
-    otp_app: :helpdesk
+    otp_app: :helpdesk,
+    extensions: [AshJsonApi.Domain]
 
   resources do
     resource Helpdesk.Support.User
