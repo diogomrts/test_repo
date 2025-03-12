@@ -40,3 +40,5 @@ npm-debug.log
 .devenv
 .direnv
 devenv.lock
+
+node_modules

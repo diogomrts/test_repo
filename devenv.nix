@@ -21,6 +21,7 @@
   # https://devenv.sh/languages/
 
   languages.elixir.enable = true;
+  languages.javascript.enable = true;
 
   # https://devenv.sh/packages/
 
