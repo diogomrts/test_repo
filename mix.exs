@@ -34,7 +34,7 @@ defmodule Helpdesk.MixProject do
   defp deps do
     [
       {:open_api_spex, "~> 3.0"},
-      {:ash_json_api, "~> 1.0"},
+      {:ash_json_api, "~> 1.4.22"},
       {:igniter, "~> 0.5", only: [:dev, :test]},
       {:phoenix, "~> 1.7.14"},
       {:phoenix_ecto, "~> 4.5"},

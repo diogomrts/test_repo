@@ -5,6 +5,7 @@ defmodule Helpdesk.Support.User do
     type "user"
 
     routes do
+      index :read, route: "/generic"
       route(:post, "/generic", :submit)
     end
   end
@@ -15,6 +16,10 @@ defmodule Helpdesk.Support.User do
   end
 
   actions do
+    read :read do
+      primary? true
+    end
+
     action :submit do
       argument :orders, {:array, Helpdesk.Type.Order}, allow_nil?: true
 
