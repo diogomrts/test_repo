@@ -68,6 +68,7 @@ defmodule Helpdesk.Repo.Migrations.Tables do
 
     create table(:campaigns, primary_key: false) do
       add(:id, :uuid, null: false, default: fragment("gen_random_uuid()"), primary_key: true)
+      add(:name, :text)
     end
 
     alter table(:teams_campaigns_users) do
@@ -103,17 +104,9 @@ defmodule Helpdesk.Repo.Migrations.Tables do
         )
       )
     end
-
-    alter table(:campaigns) do
-      add(:name, :text)
-    end
   end
 
   def down do
-    alter table(:campaigns) do
-      remove(:name)
-    end
-
     drop(constraint(:teams_campaigns, "teams_campaigns_campaign_id_fkey"))
 
     alter table(:teams_campaigns) do
@@ -129,7 +122,7 @@ defmodule Helpdesk.Repo.Migrations.Tables do
       modify(:campaign_id, :uuid)
     end
 
-    drop(table(:campaigns))
+    # drop(table(:campaigns))
 
     alter table(:teams) do
       remove(:name)

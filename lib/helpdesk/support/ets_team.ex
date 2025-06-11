@@ -1,4 +1,4 @@
-defmodule Helpdesk.Support.Team do
+defmodule Helpdesk.Support.EtsTeam do
   use Ash.Resource, otp_app: :helpdesk, domain: Helpdesk.Support, data_layer: Ash.DataLayer.Ets
 
   attributes do

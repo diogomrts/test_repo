@@ -1,5 +1,14 @@
 import Config
 
+config :helpdesk, Helpdesk.Repo,
+  hostname: "localhost",
+  username: "postgres",
+  password: "password",
+  database: "postgres",
+  stacktrace: true,
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 3
+
 config :helpdesk, ash_domains: [Helpdesk.Support], ecto_repos: [Helpdesk.Repo]
 
 config :ash,

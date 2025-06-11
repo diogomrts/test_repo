@@ -1,5 +1,8 @@
-defmodule Helpdesk.Support.User do
-  use Ash.Resource, otp_app: :helpdesk, domain: Helpdesk.Support, data_layer: Ash.DataLayer.Ets
+defmodule Helpdesk.Support.EtsUser do
+  use Ash.Resource,
+    otp_app: :helpdesk,
+    domain: Helpdesk.Support,
+    data_layer: Ash.DataLayer.Ets
 
   attributes do
     uuid_primary_key :id
