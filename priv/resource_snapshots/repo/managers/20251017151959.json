@@ -23,21 +23,6 @@
       "size": null,
       "source": "name",
       "type": "text"
-    },
-    {
-      "allow_nil?": true,
-      "default": "nil",
-      "generated?": false,
-      "precision": null,
-      "primary_key?": false,
-      "references": null,
-      "scale": null,
-      "size": null,
-      "source": "csv_column_mappings",
-      "type": [
-        "array",
-        "map"
-      ]
     }
   ],
   "base_filter": null,
@@ -45,7 +30,7 @@
   "custom_indexes": [],
   "custom_statements": [],
   "has_create_action": true,
-  "hash": "D7CB979A89D134D024F509BEBC17EF8A746555165DE484D0EEDB9247F10590B2",
+  "hash": "D0D74266CB0F321E96293A6E3BE464B1E30FF4D0691743C957A83A73FD5F1148",
   "identities": [],
   "multitenancy": {
     "attribute": null,
@@ -54,5 +39,5 @@
   },
   "repo": "Elixir.Helpdesk.Repo",
   "schema": null,
-  "table": "files"
+  "table": "managers"
 }

@@ -6,6 +6,6 @@ defmodule Helpdesk.Support do
     resource Helpdesk.Support.EtsUser
     resource Helpdesk.Support.EtsTeam
     resource Helpdesk.Support.PgFile
-    resource Helpdesk.Support.PgEvent
+    resource Helpdesk.Support.PgManager
   end
 end

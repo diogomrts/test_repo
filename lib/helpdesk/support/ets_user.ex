@@ -8,6 +8,7 @@ defmodule Helpdesk.Support.EtsUser do
     uuid_primary_key :id
     attribute :team_id, :uuid, public?: true
     attribute :name, :string, public?: true
+    attribute :enabled, :boolean, public?: true
   end
 
   actions do

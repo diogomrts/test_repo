@@ -4,8 +4,10 @@
       "allow_nil?": false,
       "default": "fragment(\"gen_random_uuid()\")",
       "generated?": false,
+      "precision": null,
       "primary_key?": true,
       "references": null,
+      "scale": null,
       "size": null,
       "source": "id",
       "type": "uuid"
@@ -14,40 +16,37 @@
       "allow_nil?": true,
       "default": "nil",
       "generated?": false,
+      "precision": null,
       "primary_key?": false,
-      "references": {
-        "deferrable": false,
-        "destination_attribute": "id",
-        "destination_attribute_default": null,
-        "destination_attribute_generated": null,
-        "index?": false,
-        "match_type": null,
-        "match_with": null,
-        "multitenancy": {
-          "attribute": null,
-          "global": null,
-          "strategy": null
-        },
-        "name": "users_team_id_fkey",
-        "on_delete": null,
-        "on_update": null,
-        "primary_key?": true,
-        "schema": "public",
-        "table": "teams"
-      },
+      "references": null,
+      "scale": null,
       "size": null,
-      "source": "team_id",
+      "source": "manager_id",
       "type": "uuid"
     },
     {
       "allow_nil?": true,
       "default": "nil",
       "generated?": false,
+      "precision": null,
       "primary_key?": false,
       "references": null,
+      "scale": null,
       "size": null,
       "source": "name",
       "type": "text"
+    },
+    {
+      "allow_nil?": true,
+      "default": "nil",
+      "generated?": false,
+      "precision": null,
+      "primary_key?": false,
+      "references": null,
+      "scale": null,
+      "size": null,
+      "source": "enabled",
+      "type": "boolean"
     }
   ],
   "base_filter": null,
@@ -55,7 +54,7 @@
   "custom_indexes": [],
   "custom_statements": [],
   "has_create_action": true,
-  "hash": "59A0A56AB32162A65012300447388D14F95F6454F7A31CDECFFC8E966309C116",
+  "hash": "61855A9D6E2DDFEF45B46CA425B5B1E65B51E0A891AC25E580DC4ECB7A086B07",
   "identities": [],
   "multitenancy": {
     "attribute": null,
@@ -64,5 +63,5 @@
   },
   "repo": "Elixir.Helpdesk.Repo",
   "schema": null,
-  "table": "users"
+  "table": "files"
 }

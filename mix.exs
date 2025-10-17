@@ -34,7 +34,8 @@ defmodule Helpdesk.MixProject do
 
   defp aliases() do
     [
-      test: ["ash.setup --quiet", "test"], setup: "ash.setup"
+      test: ["ash.setup --quiet", "test"],
+      setup: "ash.setup"
     ]
   end
 

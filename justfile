@@ -42,7 +42,7 @@ db-wipe:
 
 # db should be running to run db-reset
 db-reset:
-  env DB_SELECT=LOCAL mix db.reset
+  rm -r .devenv/state
 
 # db should be running to run db-data-reset
 db-data-reset:

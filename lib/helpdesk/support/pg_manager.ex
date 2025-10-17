@@ -1,22 +1,29 @@
-defmodule Helpdesk.Support.PgFile do
+defmodule Helpdesk.Support.PgManager do
   use Ash.Resource,
     otp_app: :helpdesk,
     domain: Helpdesk.Support,
     data_layer: AshPostgres.DataLayer
 
+
   postgres do
-    table "files"
+    table "managers"
     repo Helpdesk.Repo
   end
 
   attributes do
     uuid_primary_key :id
-    attribute :manager_id, :uuid, public?: true
     attribute :name, :string, public?: true
-    attribute :enabled, :boolean, public?: true
   end
 
   actions do
     defaults [:read, create: :*, update: :*]
+  end
+
+  relationships do
+    has_many :files, Helpdesk.Support.PgFile, destination_attribute: :manager_id
+  end
+
+  aggregates do
+    count :enabled_files, :files, filter: expr(enabled == true)
   end
 end

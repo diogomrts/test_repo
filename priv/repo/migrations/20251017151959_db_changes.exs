@@ -1,4 +1,4 @@
-defmodule Helpdesk.Repo.Migrations.Files do
+defmodule Helpdesk.Repo.Migrations.DbChanges do
   @moduledoc """
   Updates resources based on their most recent snapshots.
 
@@ -8,14 +8,22 @@ defmodule Helpdesk.Repo.Migrations.Files do
   use Ecto.Migration
 
   def up do
-    create table(:files, primary_key: false) do
+    create table(:managers, primary_key: false) do
       add(:id, :uuid, null: false, default: fragment("gen_random_uuid()"), primary_key: true)
       add(:name, :text)
-      add(:csv_column_mappings, {:array, :map})
+    end
+
+    create table(:files, primary_key: false) do
+      add(:id, :uuid, null: false, default: fragment("gen_random_uuid()"), primary_key: true)
+      add(:manager_id, :uuid)
+      add(:name, :text)
+      add(:enabled, :boolean)
     end
   end
 
   def down do
     drop(table(:files))
+
+    drop(table(:managers))
   end
 end
