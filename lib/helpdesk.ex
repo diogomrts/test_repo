@@ -13,6 +13,13 @@ defmodule Helpdesk do
 
   """
   def test do
-    :hello_world
+    # no warning
+    Ash.create!(Helpdesk.Support.PgFile, %{name: "name"})
+
+    # with bulk_create and event logging for this action we get "Missed 1 notifications in action Helpdesk.Support.PgEvent.create."
+    Ash.bulk_create!([
+      %{name: "name"},
+      %{name: "name"}
+    ], Helpdesk.Support.PgFile, :create)
   end
 end
