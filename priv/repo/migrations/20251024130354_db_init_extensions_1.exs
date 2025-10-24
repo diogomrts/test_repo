@@ -1,4 +1,4 @@
-defmodule Helpdesk.Repo.Migrations.DbChangesExtensions1 do
+defmodule Helpdesk.Repo.Migrations.DbInitExtensions1 do
   @moduledoc """
   Installs any extensions that are mentioned in the repo's `installed_extensions/0` callback
 

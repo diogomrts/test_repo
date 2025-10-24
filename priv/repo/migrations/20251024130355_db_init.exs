@@ -1,4 +1,4 @@
-defmodule Helpdesk.Repo.Migrations.DbChanges do
+defmodule Helpdesk.Repo.Migrations.DbInit do
   @moduledoc """
   Updates resources based on their most recent snapshots.
 
@@ -19,9 +19,24 @@ defmodule Helpdesk.Repo.Migrations.DbChanges do
       add(:name, :text)
       add(:enabled, :boolean)
     end
+
+    create table(:events, primary_key: false) do
+      add(:id, :bigserial, null: false, primary_key: true)
+      add(:record_id, :text, null: false)
+      add(:version, :bigint, null: false, default: 1)
+      add(:metadata, :map, null: false, default: %{})
+      add(:data, :map, null: false, default: %{})
+      add(:changed_attributes, :map, null: false, default: %{})
+      add(:occurred_at, :utc_datetime_usec, null: false)
+      add(:resource, :text, null: false)
+      add(:action, :text, null: false)
+      add(:action_type, :text, null: false)
+    end
   end
 
   def down do
+    drop(table(:events))
+
     drop(table(:files))
 
     drop(table(:managers))

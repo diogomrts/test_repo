@@ -1,0 +1,18 @@
+[tools]
+erlang = "28"
+elixir = "1.18.4-otp-28"
+
+[tasks.db-reset]
+description = "reset db"
+run = "rm -r .devenv/state"
+
+[tasks.db]
+description = "start postgres in foreground"
+run = [
+  "rm -f .devenv/state/postgres/log/*.log",
+  "start-postgres",
+]
+
+[tasks.dev-server]
+description = "run plaza dev server in foreground"
+run = "iex -S mix"

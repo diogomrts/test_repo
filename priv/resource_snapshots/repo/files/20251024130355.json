@@ -21,16 +21,40 @@
       "references": null,
       "scale": null,
       "size": null,
+      "source": "manager_id",
+      "type": "uuid"
+    },
+    {
+      "allow_nil?": true,
+      "default": "nil",
+      "generated?": false,
+      "precision": null,
+      "primary_key?": false,
+      "references": null,
+      "scale": null,
+      "size": null,
       "source": "name",
       "type": "text"
+    },
+    {
+      "allow_nil?": true,
+      "default": "nil",
+      "generated?": false,
+      "precision": null,
+      "primary_key?": false,
+      "references": null,
+      "scale": null,
+      "size": null,
+      "source": "enabled",
+      "type": "boolean"
     }
   ],
   "base_filter": null,
   "check_constraints": [],
   "custom_indexes": [],
   "custom_statements": [],
-  "has_create_action": true,
-  "hash": "D0D74266CB0F321E96293A6E3BE464B1E30FF4D0691743C957A83A73FD5F1148",
+  "has_create_action": false,
+  "hash": "5250A1029F7D087DB05A411CD269526395A40857819CFCEA791B3E264F687E0A",
   "identities": [],
   "multitenancy": {
     "attribute": null,
@@ -39,5 +63,5 @@
   },
   "repo": "Elixir.Helpdesk.Repo",
   "schema": null,
-  "table": "managers"
+  "table": "files"
 }
