@@ -16,3 +16,7 @@ run = [
 [tasks.dev-server]
 description = "run plaza dev server in foreground"
 run = "iex -S mix"
+
+[tasks.deps-upgrade]
+description = "run plaza dev server in foreground"
+run = "mix igniter.upgrade --all && mix deps.clean --unused --unlock"

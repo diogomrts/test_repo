@@ -25,9 +25,9 @@ defmodule Helpdesk.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ash, "~> 3.5"},
-      {:ash_events, "~> 0.3"},
-      {:ash_postgres, "~> 2.6"},
+      {:ash, "~> 3.0"},
+      {:ash_events, "~> 0.5"},
+      {:ash_postgres, "~> 2.0"},
       {:igniter, "~> 0.6", only: [:dev, :test]}
     ]
   end
