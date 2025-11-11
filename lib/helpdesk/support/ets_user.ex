@@ -4,14 +4,14 @@ defmodule Helpdesk.Support.EtsUser do
     domain: Helpdesk.Support,
     data_layer: Ash.DataLayer.Ets
 
+  actions do
+    defaults [:read, create: :*, update: :*]
+  end
+
   attributes do
     uuid_primary_key :id
     attribute :team_id, :uuid, public?: true
     attribute :name, :string, public?: true
     attribute :enabled, :boolean, public?: true
-  end
-
-  actions do
-    defaults [:read, create: :*, update: :*]
   end
 end

@@ -10,7 +10,7 @@ defmodule Helpdesk.Support.PgEvent do
   end
 
   event_log do
-    record_id_type :string
+    record_id_type(:string)
   end
 
   actions do

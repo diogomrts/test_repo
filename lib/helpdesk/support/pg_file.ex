@@ -6,7 +6,7 @@ defmodule Helpdesk.Support.PgFile do
     data_layer: AshPostgres.DataLayer
 
   events do
-    event_log Helpdesk.Support.PgEvent
+    event_log(Helpdesk.Support.PgEvent)
     # ignoring the actions bellow will make the actions work as expected
     # ignore_actions([:create, :update])
   end
