@@ -8,5 +8,6 @@ defmodule Helpdesk.Support do
     resource Helpdesk.Support.PgEvent
     resource Helpdesk.Support.PgFile
     resource Helpdesk.Support.PgManager
+    resource Helpdesk.Support.PgContact
   end
 end
