@@ -28,7 +28,8 @@ defmodule Helpdesk.MixProject do
       {:ash, "~> 3.0"},
       {:ash_events, "~> 0.5"},
       {:ash_postgres, "~> 2.0"},
-      {:igniter, "~> 0.6", only: [:dev, :test]}
+      {:igniter, "~> 0.6", only: [:dev, :test]},
+      {:picosat_elixir, "~> 0.2"}
     ]
   end
 
